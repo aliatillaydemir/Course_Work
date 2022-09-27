@@ -1,29 +1,25 @@
 package com.ayd.signinsignup.bottomSheet
 
-import android.app.Activity
+
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
-import com.ayd.signinsignup.MainViewModel
 import com.ayd.signinsignup.databinding.FragmentLoginBottomSheetBinding
 import com.ayd.signinsignup.loading.LoadingDialog
 import com.ayd.signinsignup.main.HomeActivity
+import com.ayd.signinsignup.util.Constant.STATE_VALUE
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 
 class LoginBottomSheet : BottomSheetDialogFragment() {
 
-    lateinit var binding: FragmentLoginBottomSheetBinding
-
+    private lateinit var binding: FragmentLoginBottomSheetBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,22 +32,36 @@ class LoginBottomSheet : BottomSheetDialogFragment() {
 
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        binding.yesButton.setOnClickListener {
-            waitAndGo()
-        }
-
-        binding.noButton.setOnClickListener {
-            waitAndGo()
-        }
+        setOnClick()
 
 
     }
 
-    private fun waitAndGo() {
+
+    private fun setOnClick() {
+
+        val intent = Intent(requireContext(),HomeActivity::class.java)
+
+        binding.yesButton.setOnClickListener {
+
+            intent.putExtra(STATE_VALUE,true)
+            waitAndGo(intent)
+        }
+
+        binding.noButton.setOnClickListener {
+
+            intent.putExtra(STATE_VALUE,false)
+            waitAndGo(intent)
+        }
+
+    }
+
+
+    private fun waitAndGo(intent: Intent) {
 
         val loading = LoadingDialog(this.requireActivity())
         loading.startLoading()
@@ -59,16 +69,14 @@ class LoginBottomSheet : BottomSheetDialogFragment() {
         lifecycleScope.launch {
             launch {
                 delay(2000)
+                startActivity(intent)
                 //loading.isDissmiss()
-            }
-            launch {
-                delay(2000)
-                startActivity(Intent(context, HomeActivity::class.java))
                 activity?.onBackPressed()
             }
         }
 
-
     }
+
+
 
 }

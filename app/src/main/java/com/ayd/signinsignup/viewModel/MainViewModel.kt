@@ -1,4 +1,4 @@
-package com.ayd.signinsignup
+package com.ayd.signinsignup.viewModel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
