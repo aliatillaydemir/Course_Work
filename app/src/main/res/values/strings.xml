@@ -3,4 +3,6 @@
     <string name="welcome_to_bauuss">Welcome to \nBauuss</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_home_fragment">Welcome to Home Fragment</string>
+    <string name="welcome_to_settings_fragment">Welcome to Settings Fragment</string>
 </resources>

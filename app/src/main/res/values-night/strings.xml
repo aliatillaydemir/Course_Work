@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="welcome_to_bauuss">Welcome to Bauuss</string>
+    <string name="welcome_to_home_fragment">Welcome to Home Fragment</string>
+    <string name="welcome_to_settings_fragment">Welcome to Settings Fragment</string>
 </resources>

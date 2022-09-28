@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        fullScreenSplashScreen()
+        fullScreenSplashScreen()  // = supportActionBar?.hide()
         splashScreenConfig()
 
 
@@ -49,8 +49,8 @@ class SplashActivity : AppCompatActivity() {
     private fun fullScreenSplashScreen() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())  // = supportActionBar?.hide()
+        } else {  // for older devices
             window.setFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN
