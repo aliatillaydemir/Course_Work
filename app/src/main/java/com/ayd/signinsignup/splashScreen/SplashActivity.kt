@@ -1,13 +1,15 @@
 package com.ayd.signinsignup.splashScreen
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.ayd.signinsignup.LoginActivity
+import com.ayd.signinsignup.view.LoginActivity
 import com.ayd.signinsignup.databinding.ActivitySplashBinding
+import com.ayd.signinsignup.view.onBoarding.ViewPagerFragment
 
 class SplashActivity : AppCompatActivity() {
 
@@ -33,8 +35,10 @@ class SplashActivity : AppCompatActivity() {
             splash.alpha = 0f
 
             splash.animate().setDuration(2000).alpha(1f).withEndAction{
-                val intent = Intent(this@SplashActivity,LoginActivity::class.java)
-                startActivity(intent)
+                //val intent = Intent(this@SplashActivity,LoginActivity::class.java)
+                //val intent = Intent(this@SplashActivity, ViewPagerFragment::class.java)
+                //startActivity(intent)
+                onBoardingStatus()
 
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out)
                 finish()
@@ -57,6 +61,26 @@ class SplashActivity : AppCompatActivity() {
             )
         }
 
+    }
+
+
+
+
+    private fun onBoardingStatus() {
+
+        if(isOnBoardingfinished()){
+            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+        }else{
+            startActivity(Intent(this@SplashActivity,ViewPagerFragment::class.java))
+        }
+
+    }
+
+
+
+    private fun isOnBoardingfinished(): Boolean{
+        val sharedPref = this.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished", false)  //default value is false
     }
 
 

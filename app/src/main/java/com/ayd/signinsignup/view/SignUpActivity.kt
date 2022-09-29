@@ -1,18 +1,13 @@
-package com.ayd.signinsignup
+package com.ayd.signinsignup.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.TextUtils
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
-import com.ayd.signinsignup.data.local.UserDatabase
 import com.ayd.signinsignup.databinding.ActivitySignUpBinding
 import com.ayd.signinsignup.model.User
 import com.ayd.signinsignup.viewModel.UserViewModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class SignUpActivity : AppCompatActivity() {
 
@@ -31,7 +26,7 @@ class SignUpActivity : AppCompatActivity() {
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]  //userViewModel initializing
 
         binding.backButton.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity,LoginActivity::class.java))
+            startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
         }
 
         binding.registerButton.setOnClickListener {

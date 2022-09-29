@@ -1,4 +1,4 @@
-package com.ayd.signinsignup.loading
+package com.ayd.signinsignup.view.loading
 
 import android.app.Activity
 import android.app.AlertDialog

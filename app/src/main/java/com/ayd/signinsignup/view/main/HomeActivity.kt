@@ -1,4 +1,4 @@
-package com.ayd.signinsignup.main
+package com.ayd.signinsignup.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,8 +6,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.ayd.signinsignup.R
 import com.ayd.signinsignup.databinding.ActivityHomeBinding
-import com.ayd.signinsignup.fragments.HomeFragment
-import com.ayd.signinsignup.fragments.SettingsFragment
+import com.ayd.signinsignup.view.fragments.HomeFragment
+import com.ayd.signinsignup.view.fragments.SettingsFragment
 import com.ayd.signinsignup.util.Constant.STATE_VALUE
 
 class HomeActivity : AppCompatActivity() {

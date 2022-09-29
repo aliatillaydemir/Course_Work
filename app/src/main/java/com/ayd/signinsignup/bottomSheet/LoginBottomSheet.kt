@@ -9,8 +9,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
 import com.ayd.signinsignup.databinding.FragmentLoginBottomSheetBinding
-import com.ayd.signinsignup.loading.LoadingDialog
-import com.ayd.signinsignup.main.HomeActivity
+import com.ayd.signinsignup.view.loading.LoadingDialog
+import com.ayd.signinsignup.view.main.HomeActivity
 import com.ayd.signinsignup.util.Constant.STATE_VALUE
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.coroutines.delay
@@ -44,7 +44,7 @@ class LoginBottomSheet : BottomSheetDialogFragment() {
 
     private fun setOnClick() {
 
-        val intent = Intent(requireContext(),HomeActivity::class.java)
+        val intent = Intent(requireContext(), HomeActivity::class.java)
 
         binding.yesButton.setOnClickListener {
 

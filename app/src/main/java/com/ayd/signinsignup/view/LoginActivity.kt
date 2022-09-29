@@ -1,4 +1,4 @@
-package com.ayd.signinsignup
+package com.ayd.signinsignup.view
 
 
 import android.content.Intent
@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         binding.signupButton.setOnClickListener {
-        startActivity(Intent(this@LoginActivity,SignUpActivity::class.java))
+        startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
         }
 
 
