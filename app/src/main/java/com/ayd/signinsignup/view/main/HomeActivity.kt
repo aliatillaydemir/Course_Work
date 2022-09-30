@@ -9,7 +9,9 @@ import com.ayd.signinsignup.databinding.ActivityHomeBinding
 import com.ayd.signinsignup.view.fragments.HomeFragment
 import com.ayd.signinsignup.view.fragments.SettingsFragment
 import com.ayd.signinsignup.util.Constant.STATE_VALUE
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding

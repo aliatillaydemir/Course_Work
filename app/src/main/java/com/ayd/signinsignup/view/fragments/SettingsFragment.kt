@@ -1,5 +1,7 @@
 package com.ayd.signinsignup.view.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.ayd.signinsignup.R
 import com.ayd.signinsignup.databinding.FragmentSettingsBinding
 
@@ -41,11 +44,9 @@ class SettingsFragment : Fragment() {
                     parent: AdapterView<*>,
                     view: View, position: Int, id: Long
                 ) {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.selected_item) + " " +
-                                "" + language[position], Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(requireContext(), getString(R.string.selected_item) + " " + "" + language[position], Toast.LENGTH_SHORT).show()
+
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -53,6 +54,13 @@ class SettingsFragment : Fragment() {
                 }
             }
         }
+
+
+
+        binding.switch1.setOnClickListener{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+
 
 
         return binding.root

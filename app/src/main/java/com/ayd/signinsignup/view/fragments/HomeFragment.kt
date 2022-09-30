@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ayd.signinsignup.view.RecyclerAdapter
 import com.ayd.signinsignup.databinding.FragmentHomeBinding
 import com.ayd.signinsignup.viewModel.UserViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

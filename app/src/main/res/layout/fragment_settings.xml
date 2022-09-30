@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.fragments.SettingsFragment">
 
     <TextView
@@ -32,7 +33,7 @@
         android:layout_width="126dp"
         android:layout_height="25dp"
         android:layout_marginTop="100dp"
-        android:text="Language Settings"
+        android:text="@string/language_settings"
         app:layout_constraintEnd_toEndOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="@+id/switch1"
         app:layout_constraintTop_toBottomOf="@+id/switch1" />
