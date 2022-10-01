@@ -1,0 +1,71 @@
+Aktivitelerde lifecycle süreci için 6 temel callback bulunur.
+Bunlar;
+1-) onCreate(), 
+2-) onStart(), 
+3-) onResume(), 
+4-) onPause(), 
+5-) onStop(), 
+6-) onDestroy()
+
+Her aktivite açılışında(yeni bir state durumunda) sistem bu callbacklerden birini çağırır.
+
+1-) onCreate()
+
+Bu methodun çağırılması şart. Bu yazılmadan teknik olarak activity oluşturulamaz. 
+Aktivite oluştuğunda(launch edildiğinde) ilk bu method çağrılır. onStop() sonrasında yeniden
+yaratım, yani onCreate süreci gerekli olduğundan arka arkaya gelirler.
+
+
+2-) onStart()
+
+Aktivite oluştuktan sonra kullanıcıya görünür olan süreç burada başlar. onRestart() methodu
+çalıştıktan sonra yenileme süreci onCreate ile değil(burada uygulama yeniden ayağa kalkıyor çünkü)
+onStart ile başlar.
+
+3-) onResume()
+
+Arka plana atılan uygulama/activity sonrasında ön plana alınma işlemi gerçekleştiğinde
+bu method çalışır ya da çalışabilir. Kamerayı aktif tutmak, gps ile lokasyon tutma gibi 
+işlemlerde kritik diyebileceğimiz bir lifecycle aşamasıdır. onPause sonrası bu lifecycle 
+zincirinin bu halkası çalışır.
+
+4-) onPause()
+
+Activity/Uygulama arka plandayken bu method çağrılır. Yine yukarıdaki gibi gps, kamera vs.
+işlemleri için önemli yer teşkil ederdi fakat kısa süreli bir süreç gerektirdiğinden,
+yerini onPause() methoduna bırakmıştır. Kısa süreli işlemler için kullanılabilir.
+
+5-) onStop()
+
+İşlemci, bellek gibi tasarruf edilmesi gereken donanım ve özellikler için doğru şekilde 
+kullanılmalıdır. Bu sayede uygulamanın optimizasyon ve performans açısından kalitesini 
+arttırır. onPause'un aksine aktivite uzun süredir sistemde kalmıyorsa kullanılır. onRestart
+ile onStart() halkasına dönme imkanı verir.
+
+-onPause ve onStop sonrası onCreated ile yeniden lifecycle süreci başlatılabilir. onPause
+ile onResume callback'i de çağrılabilir.
+
+6-) onDestroy()
+
+Aktiviteyle iş bittiğinde kapatmaya yarar. Belleği temizler ve activity kapatılır. finish()
+methoduyla kullanılabilir. splash screen ya da bir daha girmeyeceğimiz login ekranları gibi
+yerlerde kullanılır. Data ile çok fazla uğraşılmaz(kaydetme işlemi özellikle). Çünkü aktivite
+kapandıktan sonra bilgiler uçacaktır.
+
+
+* Bu 6 temel callback, aktivitedeki lifecycle süreçlerini temsil eder. Launch ve shut down
+aşamalarına kadar kullanıcıya eşlik etmekle birlikte yönetim süreçleri bundan ibaret değildir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
