@@ -9,6 +9,8 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.ayd.signinsignup.view.LoginActivity
 import com.ayd.signinsignup.databinding.ActivitySplashBinding
+import com.ayd.signinsignup.util.Constant.BOARD
+import com.ayd.signinsignup.util.Constant.FINISHED_INT
 import com.ayd.signinsignup.view.onBoarding.ViewPagerFragment
 
 class SplashActivity : AppCompatActivity() {
@@ -79,8 +81,8 @@ class SplashActivity : AppCompatActivity() {
 
 
     private fun isOnBoardingfinished(): Boolean{
-        val sharedPref = this.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)  //default value is false
+        val sharedPref = this.getSharedPreferences(BOARD, Context.MODE_PRIVATE)
+        return sharedPref.getBoolean(FINISHED_INT, false)  //default value is false
     }
 
 

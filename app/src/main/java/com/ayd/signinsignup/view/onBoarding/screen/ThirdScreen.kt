@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.ayd.signinsignup.view.LoginActivity
 import com.ayd.signinsignup.databinding.FragmentThirdBinding
+import com.ayd.signinsignup.util.Constant.BOARD
+import com.ayd.signinsignup.util.Constant.FINISHED_INT
 
 
 class ThirdScreen : Fragment() {
@@ -34,9 +36,9 @@ class ThirdScreen : Fragment() {
     }
 
     private fun isOnBoardingfinished(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding",Context.MODE_PRIVATE)
+        val sharedPref = requireActivity().getSharedPreferences(BOARD,Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
+        editor.putBoolean(FINISHED_INT, true)
         editor.apply()
     }
 

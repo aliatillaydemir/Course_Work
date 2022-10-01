@@ -26,7 +26,8 @@ class SignUpActivity : AppCompatActivity() {
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]  //userViewModel initializing
 
         binding.backButton.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
+            //startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))  //intent aktivite arasında gidip gelmek için kullanılabilir ama maliyetli ve statik.
+            onBackPressed()  //lifecycle zinciridir.
         }
 
         binding.registerButton.setOnClickListener {

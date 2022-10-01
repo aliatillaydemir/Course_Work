@@ -38,7 +38,7 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>()  {
 
     fun setData(user:List<User>){
         this.userList = user
-        notifyDataSetChanged()
+        notifyDataSetChanged()  //diff util classı kullanılabilir.
     }
 
 

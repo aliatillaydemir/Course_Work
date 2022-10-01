@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import com.ayd.signinsignup.R
 import com.ayd.signinsignup.databinding.FragmentSettingsBinding
+import com.ayd.signinsignup.util.Constant
 
 class SettingsFragment : Fragment() {
 
@@ -57,9 +58,22 @@ class SettingsFragment : Fragment() {
 
 
 
-        binding.switch1.setOnClickListener{
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
+  /*      binding.switch1.setOnCheckedChangeListener { button, isCheck ->
+
+            val sharedPref = requireActivity().getSharedPreferences("dark_mode",Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+
+            if(isCheck){
+                //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                editor.putBoolean("dark", true)
+                editor.apply()
+            }else{
+                //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                editor.putBoolean("dark", false)
+                editor.apply()
+            }
+
+        }*/
 
 
 

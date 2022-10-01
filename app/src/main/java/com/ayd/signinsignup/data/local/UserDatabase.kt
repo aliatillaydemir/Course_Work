@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.ayd.signinsignup.data.local.dao.UserDao
 import com.ayd.signinsignup.model.User
+import com.ayd.signinsignup.util.Constant.TABLE_NAME
 
 @Database(entities = [User::class], version = 1)
 abstract class UserDatabase: RoomDatabase() {
@@ -28,7 +29,7 @@ abstract class UserDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     UserDatabase::class.java,
-                    "user_database"
+                    TABLE_NAME
                 ).build()
                 INSTANCE = instance
                 return instance

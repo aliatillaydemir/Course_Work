@@ -3,9 +3,12 @@ package com.ayd.signinsignup.view.main
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.ayd.signinsignup.R
 import com.ayd.signinsignup.databinding.ActivityHomeBinding
+import com.ayd.signinsignup.util.Constant.RECEIVER_NO
+import com.ayd.signinsignup.util.Constant.RECEIVER_YES
 import com.ayd.signinsignup.view.fragments.HomeFragment
 import com.ayd.signinsignup.view.fragments.SettingsFragment
 import com.ayd.signinsignup.util.Constant.STATE_VALUE
@@ -38,13 +41,24 @@ class HomeActivity : AppCompatActivity() {
         val reciever = intent.getBooleanExtra(STATE_VALUE,false)
 
         if(!reciever){
-            Toast.makeText(this,"Password not Saved!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,RECEIVER_NO,Toast.LENGTH_SHORT).show()
 
         }else{
-            Toast.makeText(this,"Password Saved!",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,RECEIVER_YES,Toast.LENGTH_SHORT).show()
         }
 
 
+
+/*
+        val darkReceiver = intent.getBooleanExtra("dark_mode",false)
+
+        if(darkReceiver){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+*/
 
 
     }
@@ -54,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frameLayout,fragment)
+        fragmentTransaction.replace(R.id.frameLayout,fragment)  //not add, replace! I don't want overlapping fragments. So i used replace.
         fragmentTransaction.commit()
 
     }
