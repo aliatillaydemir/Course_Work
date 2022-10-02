@@ -1,6 +1,5 @@
 # week-2-assignment-aliatillaydemir
 
-<br/><br/>
 
 ## Splash Screen
 
