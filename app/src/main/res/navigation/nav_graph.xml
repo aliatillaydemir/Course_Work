@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/avatarListFragment">
+
+    <fragment
+        android:id="@+id/avatarListFragment"
+        android:name="com.ayd.avatarproject.ui.fragments.AvatarListFragment"
+        android:label="fragment_avatar_list"
+        tools:layout="@layout/fragment_avatar_list" >
+        <action
+            android:id="@+id/action_avatarListFragment_to_avatarDetailsFragment"
+            app:destination="@id/avatarDetailsFragment" />
+        <argument
+            android:name="avatarArg"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/avatarDetailsFragment"
+        android:name="com.ayd.avatarproject.ui.fragments.AvatarDetailsFragment"
+        android:label="fragment_avatar_details"
+        tools:layout="@layout/fragment_avatar_details" />
+</navigation>
