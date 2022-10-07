@@ -27,7 +27,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#EDD2B6">
+            android:background="#ffcc80">
 
             <!-- imageView ekranın tamamını kaplamasını istiyorsak centerCrop olacak scale type -->
             <ImageView
