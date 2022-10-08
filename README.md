@@ -7,7 +7,7 @@
 
 ## Proje Fotoları:
 
-<img src="https://github.com/Pazarama-Android-Kotlin-Bootcamp/week-3-assignment-aliatillaydemir/blob/main/Proje%20Foto/Screenshot_9.png" width=30% height=70%>&ensp;&ensp;&ensp;<img src="https://github.com/Pazarama-Android-Kotlin-Bootcamp/week-3-assignment-aliatillaydemir/blob/main/Proje%20Foto/Screenshot_10.png" width=30% height=70%>&ensp;&ensp;&ensp;<img src="https://github.com/Pazarama-Android-Kotlin-Bootcamp/week-3-assignment-aliatillaydemir/blob/main/Proje%20Foto/Screenshot_11.png" width=30% height=70%> 
+<img src="https://github.com/aliatillaydemir/Course_Work/blob/Week3/Proje%20Foto/Screenshot_9.png" width=30% height=70%>&ensp;&ensp;&ensp;<img src="https://github.com/aliatillaydemir/Course_Work/blob/Week3/Proje%20Foto/Screenshot_10.png" width=30% height=70%>&ensp;&ensp;&ensp;<img src="https://github.com/aliatillaydemir/Course_Work/blob/Week3/Proje%20Foto/Screenshot_11.png" width=30% height=70%> 
  
 
 -----------------------
