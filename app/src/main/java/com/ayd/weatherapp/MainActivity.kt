@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     private fun getInfo() {
         ApiClient.getApiService().weatherQuery(41.015137,28.979530).enqueue(object :
             Callback<MainWeather> {
