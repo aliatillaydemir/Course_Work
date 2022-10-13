@@ -1,8 +1,12 @@
 package com.ayd.weatherapp.models
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
 
+@Parcelize
 data class Daily(
     @SerializedName("clouds")
     val clouds: Int?,
@@ -11,7 +15,7 @@ data class Daily(
     @SerializedName("dt")
     val dt: Int?,
     @SerializedName("feels_like")
-    val feelsLike: FeelsLike?,
+    val feelsLike: @RawValue FeelsLike?,
     @SerializedName("humidity")
     val humidity: Int?,
     @SerializedName("moon_phase")
@@ -31,15 +35,15 @@ data class Daily(
     @SerializedName("sunset")
     val sunset: Int?,
     @SerializedName("temp")
-    val temp: Temp?,
+    val temp: @RawValue Temp?,
     @SerializedName("uvi")
     val uvi: Double?,
     @SerializedName("weather")
-    val weather: List<Weather>?,
+    val weather: @RawValue List<Weather>?,
     @SerializedName("wind_deg")
     val windDeg: Int?,
     @SerializedName("wind_gust")
     val windGust: Double?,
     @SerializedName("wind_speed")
     val windSpeed: Double?
-)
+): Parcelable
