@@ -1,35 +1,52 @@
 package com.ayd.weatherapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.navigation.fragment.NavHostFragment
 import coil.load
 import com.ayd.weatherapp.data.ApiClient
+import com.ayd.weatherapp.databinding.FragmentHomeBinding
 import com.ayd.weatherapp.models.MainWeather
-import com.ayd.weatherapp.models.Weather
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class HomeFragment : Fragment() {
 
-    //lateinit var imageView: ImageView
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        getInfo()
 
-        //imageView = findViewById(R.id.imageView)
-
-        //getInfo()
-
+        return binding.root
     }
 
- /*   private fun getInfo() {
+/*
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        getInfo()
+    }
+*/
+
+/*    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        getInfo()
+    }*/
+
+    private fun getInfo() {
         ApiClient.getApiService().weatherQuery(41.015137,28.979530).enqueue(object :
             Callback<MainWeather> {
             override fun onResponse(call: Call<MainWeather>, response: Response<MainWeather>) {
@@ -39,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
                 Log.d("deneme1", response.body()?.current?.weather?.get(0)?.icon.toString())
                 val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
-                imageView.load("https://openweathermap.org/img/wn/${photo}@2x.png")
+                binding.specialImage.load("https://openweathermap.org/img/wn/${photo}@2x.png")
 
 
                 if (response.isSuccessful) {
@@ -58,7 +75,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    }*/
-
+    }
 
 }

@@ -8,8 +8,8 @@ data class MainWeather(
     val current: Current?,
     @SerializedName("daily")
     val daily: List<Daily>?,
-    @SerializedName("hourly")
-    val hourly: List<Hourly>?,
+    //@SerializedName("hourly")   //bu hourly'de hata veriyor, neden anlamadım ama bulacağım. aynı şekilde kullandığım liste dönen değişkenler var, gson hatası verme sebebi bulunmalı.
+    //val hourly: List<Hourly>?,
     @SerializedName("lat")
     val lat: Double?,
     @SerializedName("lon")
