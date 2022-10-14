@@ -15,7 +15,6 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
-    //lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,42 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
-        //imageView = findViewById(R.id.imageView)
-
-        //getInfo()
-
     }
-
- /*   private fun getInfo() {
-        ApiClient.getApiService().weatherQuery(41.015137,28.979530).enqueue(object :
-            Callback<MainWeather> {
-            override fun onResponse(call: Call<MainWeather>, response: Response<MainWeather>) {
-                Log.d("deneme1", response.body().toString())
-
-                //val resp: Response<Weather> = Response<Weather>()
-
-                Log.d("deneme1", response.body()?.current?.weather?.get(0)?.icon.toString())
-                val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
-                imageView.load("https://openweathermap.org/img/wn/${photo}@2x.png")
-
-
-                if (response.isSuccessful) {
-                    val everything = response.body()
-                    everything?.let {
-                        Log.d("deneme1", it.daily?.size.toString())
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<MainWeather>, t: Throwable) {
-                Log.d("deneme1", t.toString())
-
-            }
-        })
-
-
-
-    }*/
 
 
 }

@@ -63,7 +63,6 @@ class HomeFragment : Fragment(){
             override fun onResponse(call: Call<MainWeather>, response: Response<MainWeather>) {
                 Log.d("deneme1", response.body().toString())
 
-                //val resp: Response<Weather> = Response<Weather>()
 
                 Log.d("deneme1", response.body()?.current?.weather?.get(0)?.icon.toString())
                 val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
@@ -102,7 +101,10 @@ class HomeFragment : Fragment(){
 
     }
 
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 
 }
