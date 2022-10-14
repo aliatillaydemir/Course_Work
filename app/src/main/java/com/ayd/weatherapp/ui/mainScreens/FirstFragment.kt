@@ -5,14 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.ayd.weatherapp.R
 import com.ayd.weatherapp.databinding.FragmentFirstBinding
+import com.ayd.weatherapp.util.Constants.LATITUDE
+import com.ayd.weatherapp.util.Constants.LONGITUDE
 import com.ayd.weatherapp.viewModel.MainViewModel
 
-
+//lat long değerleri bu fragmentta alınıyor. Bir sonraki sayfa için bir takım enlem boylam kontrolleri var.
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
@@ -61,23 +64,14 @@ class FirstFragment : Fragment() {
                 //ikisi de boşsa datapreference ile gir(datastore verisi kayıtlı mı kontrolü olmalı tabii).
                 //if(datastore kaydı yoksa -> bu bilgileri doldurmalısın!(uygulamaya ilk kez giriliyor.))
                 //else(datastore verilerini gönder, bir önceki girilen verilerle home fragment kısmına girilsin.)
-
-   /*              mainViewModel.readDataStore.observe(this.requireActivity()) { lati ->
-                    println("deneme - lat: $lati") //işlemler
-                    lat = lati
-                    }
-
-                mainViewModel.readDataStoreLon.observe(this.requireActivity()){ lon ->
-                    println("deneme - longi: $lon") //işlemler
-                    longi = lon
-                    }*/
-
-
+                if(lat == "no data" && longi == "no data"){
+                    Toast.makeText(context,"cache boş. İlk girişinizde veri girmek zorundasınız!",Toast.LENGTH_SHORT).show()
+                }else{
                     navController.navigate(R.id.action_firstFragment_to_homeFragment,Bundle().apply {
-                        putString("latitude",lat)
-                        putString("longitude",longi)
+                        putString(LATITUDE,lat)
+                        putString(LONGITUDE,longi)
                     })
-
+                }
 
             }else if(binding.latitudeText.text.isNullOrBlank() && !binding.longitudeText.text.isNullOrBlank()){
                 binding.latitudeText.error = "enlem bilgilerini doldurmalısın!"
@@ -92,8 +86,8 @@ class FirstFragment : Fragment() {
                 mainViewModel.saveDataStoreLon(longi)
 
                 navController.navigate(R.id.action_firstFragment_to_homeFragment,Bundle().apply {
-                    putString("latitude",lat)
-                    putString("longitude",longi)
+                    putString(LATITUDE,lat)
+                    putString(LONGITUDE,longi)
                 })
 
             }

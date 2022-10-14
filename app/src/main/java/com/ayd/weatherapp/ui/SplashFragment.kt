@@ -2,16 +2,23 @@ package com.ayd.weatherapp.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.ayd.weatherapp.R
+import com.ayd.weatherapp.util.Constants.FINISHED
+import com.ayd.weatherapp.util.Constants.ONBOARD
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 
-class SplashFragment : Fragment() {
+class SplashFragment : Fragment(), CoroutineScope {
+
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Main + Job()               //job açıyorum main'in üzerinde. splash screenim için.
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,24 +26,31 @@ class SplashFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        Handler().postDelayed({
-
-            if(onBoardingFinished()){
-                findNavController().navigate(R.id.action_splashFragment_to_firstFragment)
-            }else{
-                findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
-            }
-
-        },1000)
-
-
         return inflater.inflate(R.layout.fragment_splash, container, false)
     }
 
-    private fun onBoardingFinished(): Boolean{
-        val sharedPref = requireActivity().getSharedPreferences("onBoard",Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        launch {
+            delay(1250)                      //1.25 saniye splash screen ekranda duracak.
+            withContext(Dispatchers.Main){
+                if(onBoardingFinished()){             //eğer onbard ekranlarını bitirdiysek burası çalışır ve bir daha gözükmezler.
+                    findNavController().navigate(R.id.action_splashFragment_to_firstFragment)
+                }else{                                // uygulama ilk kez yüklendiyse ya da onbard ekranlar tamamlanmadıysa her açılışta viewpager açılır.
+                    findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
+                }
+            }
+        }
+
     }
+
+    private fun onBoardingFinished(): Boolean{  //onboard'ı bitirdik mi kontrolünü cihazda lokal olarak shared preference ile tutuyorum.
+        val sharedPref = requireActivity().getSharedPreferences(ONBOARD,Context.MODE_PRIVATE)
+        return sharedPref.getBoolean(FINISHED, false)
+    }
+
+
 
 
 }

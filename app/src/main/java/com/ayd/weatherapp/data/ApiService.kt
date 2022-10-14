@@ -6,12 +6,12 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ApiService {
+interface ApiService {  //query gibi işlemlerin yönetildiği api service. lokasyon queryleri burada sorgulanıyor.
 
     @GET(Constants.REST_URL)
     fun weatherQuery(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double
-    ): Call<MainWeather>
+    ): Call<MainWeather>  //ana modelimiz MainWeather. Buradan diğer model classlarına ulaşılabiliyor.
 
 }

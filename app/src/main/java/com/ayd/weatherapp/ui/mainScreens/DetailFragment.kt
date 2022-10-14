@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import coil.load
 import com.ayd.weatherapp.databinding.FragmentDetailBinding
 import com.ayd.weatherapp.models.MainWeather
+import com.ayd.weatherapp.util.Constants.DETAIL_KEY
 
-
+//verilerin parcelize olarak iletildiği class. Kısaca yazdırılıyorlar, başka bir şey yapılmıyor.
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
@@ -32,7 +33,7 @@ class DetailFragment : Fragment() {
 
     private fun setup() {
         arguments?.let {
-            val details = it.getString("detail")
+            val details = it.getString(DETAIL_KEY)
 
             details?.let {
                 val detail = MainWeather.fromJson(it)

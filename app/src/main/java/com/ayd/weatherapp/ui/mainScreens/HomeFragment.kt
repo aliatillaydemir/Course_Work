@@ -13,11 +13,14 @@ import com.ayd.weatherapp.R
 import com.ayd.weatherapp.data.ApiClient
 import com.ayd.weatherapp.databinding.FragmentHomeBinding
 import com.ayd.weatherapp.models.MainWeather
+import com.ayd.weatherapp.util.Constants.DETAIL_KEY
+import com.ayd.weatherapp.util.Constants.LATITUDE
+import com.ayd.weatherapp.util.Constants.LONGITUDE
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment : Fragment(){
+class HomeFragment : Fragment(){  //ana fragment. Veriler ilk burada ekrana bastırılıyor.
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -52,10 +55,9 @@ class HomeFragment : Fragment(){
 
     private fun getInfo() {
 
-
         arguments?.let {
-            latitude = it.getString("latitude").toString()
-            longitude = it.getString("longitude").toString()
+            latitude = it.getString(LATITUDE).toString()
+            longitude = it.getString(LONGITUDE).toString()
         }
 
         ApiClient.getApiService().weatherQuery(latitude.toDouble(),longitude.toDouble()).enqueue(object :
@@ -84,7 +86,7 @@ class HomeFragment : Fragment(){
 
                 binding.specialImage.setOnClickListener {
                     navController.navigate(R.id.action_homeFragment_to_detailFragment, Bundle().apply {
-                        putString("detail",response.body()?.toJson())
+                        putString(DETAIL_KEY,response.body()?.toJson())
                     })
 
                 }

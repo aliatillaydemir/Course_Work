@@ -7,13 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import androidx.viewpager2.widget.ViewPager2
 import com.ayd.weatherapp.R
-import com.ayd.weatherapp.databinding.FragmentFirstScreenBinding
-import com.ayd.weatherapp.databinding.FragmentSecondScreenBinding
 import com.ayd.weatherapp.databinding.FragmentThirdScreenBinding
+import com.ayd.weatherapp.util.Constants.FINISHED
+import com.ayd.weatherapp.util.Constants.ONBOARD
 
-class ThirdScreen : Fragment() {
+class ThirdScreen : Fragment() {   //3. tanıtım ekranı
 
     private var _binding: FragmentThirdScreenBinding? = null
     private val binding get() = _binding!!
@@ -27,7 +26,7 @@ class ThirdScreen : Fragment() {
 
 
         binding.finish.setOnClickListener{
-            findNavController().navigate(R.id.action_viewPagerFragment_to_firstFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_firstFragment)  //finish'e tıklanırsa first fragment'a gidilir.
             onBoardFinish()
         }
 
@@ -35,10 +34,10 @@ class ThirdScreen : Fragment() {
     }
 
 
-    private fun onBoardFinish(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoard", Context.MODE_PRIVATE)
+    private fun onBoardFinish(){        //shared pref ile cihazda onboard ile tanıtımın bittiği boolean true olarak ifade ediliyor. Bir daha gözükmeyecek.
+        val sharedPref = requireActivity().getSharedPreferences(ONBOARD, Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putBoolean("Finished",true)
+        editor.putBoolean(FINISHED,true)
         editor.apply()
     }
 

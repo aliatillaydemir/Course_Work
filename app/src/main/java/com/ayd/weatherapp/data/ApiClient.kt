@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiClient {
+class ApiClient {   //mimari kullanmadığımız için burada client oluşturduk. Singleton olsun diye companion object içerisinde yer alıyor.
 
     companion object {
         private lateinit var apiService: ApiService
@@ -19,12 +19,12 @@ class ApiClient {
                     .client(getHttpClient())
                     .build()
 
-                apiService = retrofit.create(ApiService::class.java)
+                apiService = retrofit.create(ApiService::class.java)                   //retrofit bağlantısı sağlandı
             }
             return apiService
         }
 
-        private fun getHttpClient(): OkHttpClient {
+        private fun getHttpClient(): OkHttpClient {            //http client bağlantı, okuma vs. gibi süreçler buradan kontrol edilebiliyor.
             val httpClient = OkHttpClient.Builder()
             httpClient.addInterceptor(AuthInterceptor())
             httpClient.connectTimeout(60, java.util.concurrent.TimeUnit.SECONDS)

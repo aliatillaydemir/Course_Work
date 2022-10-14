@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.parcel.RawValue
 
-@Parcelize
+@Parcelize                 //bu classlar parcelize çünkü bunları detay ekranıma göndereceğim. retrofit ile tek bir yerden datalar çekilir ve model classlarla istenilen aktivite ve fragmentlara bu bilgiler parcelize olarak aktarılır.
 data class MainWeather(
     @SerializedName("current")
     val current: @RawValue Current?,   //bu classları da parcelize yap.
@@ -25,7 +25,7 @@ data class MainWeather(
     @SerializedName("timezone_offset")
     val timezoneOffset: Int?
 ): Parcelable {
-    fun toJson(): String{
+    fun toJson(): String{                      //String olarak bundle gönderiyoruz. Json çevirmeleri burada yapılıyor.
         return Gson().toJson(this)
     }
     companion object {
@@ -34,4 +34,4 @@ data class MainWeather(
         }
     }
 
-}
+}//bütün veriler nullable. null olması gibi durumlar için böyle kurdum yapıyı. Bazı model classlarını kullanmıyorum ama dursun, belki ilerleyen aşamalarda kullanırım.

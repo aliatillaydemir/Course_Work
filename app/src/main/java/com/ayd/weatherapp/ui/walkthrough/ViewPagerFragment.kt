@@ -5,13 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ayd.weatherapp.R
 import com.ayd.weatherapp.databinding.FragmentViewPagerBinding
 import com.ayd.weatherapp.ui.walkthrough.onBoardingScreens.FirstScreen
 import com.ayd.weatherapp.ui.walkthrough.onBoardingScreens.SecondScreen
 import com.ayd.weatherapp.ui.walkthrough.onBoardingScreens.ThirdScreen
 
-
+//bu class viewpager fragment'ı. 27. satırdaki liste'de fragment elemanlarımız var. Bunu splash ve firstFragment'a bağladım. Birnevi nested graph gibi oldu.
 class ViewPagerFragment : Fragment() {
 
     private var _binding: FragmentViewPagerBinding? = null

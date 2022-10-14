@@ -10,7 +10,7 @@ import com.ayd.weatherapp.R
 import com.ayd.weatherapp.databinding.FragmentFirstScreenBinding
 import com.ayd.weatherapp.databinding.FragmentSecondScreenBinding
 
-class SecondScreen : Fragment() {
+class SecondScreen : Fragment() {     //2. onboard ekran
 
     private var _binding: FragmentSecondScreenBinding? = null
     private val binding get() = _binding!!
