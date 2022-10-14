@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.hide()
+
         supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 
     }

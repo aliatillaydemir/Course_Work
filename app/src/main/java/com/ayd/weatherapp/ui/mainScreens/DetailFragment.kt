@@ -1,4 +1,4 @@
-package com.ayd.weatherapp.ui
+package com.ayd.weatherapp.ui.mainScreens
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import coil.load
-import com.ayd.weatherapp.R
 import com.ayd.weatherapp.databinding.FragmentDetailBinding
 import com.ayd.weatherapp.models.MainWeather
 

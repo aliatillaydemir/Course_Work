@@ -1,4 +1,4 @@
-package com.ayd.weatherapp.ui
+package com.ayd.weatherapp.ui.mainScreens
 
 import android.os.Bundle
 import android.util.Log
