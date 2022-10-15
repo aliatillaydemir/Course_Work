@@ -73,7 +73,7 @@ class HomeFragment : Fragment(){  //ana fragment. Veriler ilk burada ekrana bast
                     myBody?.let {
 
                         val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
-                        binding.specialImage.load("https://openweathermap.org/img/wn/${photo}@2x.png")
+                        binding.specialImage.load("https://openweathermap.org/img/wn/${photo}@4x.png")
 
                         binding.textView2.text = response.body()?.timezone
                         binding.textView3.text = response.body()?.current?.weather?.get(0)?.description
