@@ -25,7 +25,7 @@ class ThirdScreen : Fragment() {   //3. tanıtım ekranı
         _binding = FragmentThirdScreenBinding.inflate(inflater, container, false)
 
 
-        binding.finish.setOnClickListener{
+        binding.finishButton.setOnClickListener{
             findNavController().navigate(R.id.action_viewPagerFragment_to_firstFragment)  //finish'e tıklanırsa first fragment'a gidilir.
             onBoardFinish()
         }

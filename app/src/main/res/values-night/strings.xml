@@ -1,7 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Weather App</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="screen3">Ayrıntılı bilgi için ana ekrandaki hava durumu icon\'una tıklayabilirsiniz. Bu sizi ayrıntı sayfasına atacaktır.\n\n Güzel günler dileriz.</string>
     <string name="screen2">Uygulamaya giriş yaparken sizden enlem ve boylam bilgileri istenmektedir.\n\n Eğer ilk kez giriş yapıyorsanız bu değerleri girmek zorundasınız. Daha önce giriş yaptıysanız, kutucukları boş bırakabilirsiniz, bir önceki değerleriniz işlenir. \n\nEnlem ya da boylamlardan birini doldurduysanız diğerini de doldurmak zorundasınız ya da ikisini de boş bırakabilirsiniz.</string>
     <string name="screen1">Hava durumu uygulamamıza hoşgeldiniz. \nBu uygulama çok güzel bir uygulama, çok süper bir uygulama.\n\n Uygulamayı tanımak için lütfen gelecek adımdaki anlatıları takip ediniz.\n\nTanıtım ekranlarını geçmek için sağ alt köşedeki kuş simgesine tıklayabilir ya da sayfayı sola kaydırabilirsiniz.</string>

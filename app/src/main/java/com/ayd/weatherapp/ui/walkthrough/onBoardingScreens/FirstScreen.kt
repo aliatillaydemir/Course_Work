@@ -24,7 +24,7 @@ class FirstScreen : Fragment() {      //ilk onBoard ekranımız.
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)  //view pager'a ulaşmak için findViewByid kullandım. Çünkü farklı bir fragment'ın xml dosyası.
 
-        binding.nextText.setOnClickListener{
+        binding.nex1Button.setOnClickListener{
             viewPager?.currentItem = 1           //bu sayfayı geçince 2. ekrana(Second Screen'e) gidilir. Eleman pozisyonları 0-1-2 şeklinde ifade edililir.
         }
 

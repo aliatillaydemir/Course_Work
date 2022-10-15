@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import coil.load
@@ -63,24 +64,26 @@ class HomeFragment : Fragment(){  //ana fragment. Veriler ilk burada ekrana bast
         ApiClient.getApiService().weatherQuery(latitude.toDouble(),longitude.toDouble()).enqueue(object :
             Callback<MainWeather> {
             override fun onResponse(call: Call<MainWeather>, response: Response<MainWeather>) {
-                Log.d("deneme1", response.body().toString())
-
-
-                Log.d("deneme1", response.body()?.current?.weather?.get(0)?.icon.toString())
-                val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
-                binding.specialImage.load("https://openweathermap.org/img/wn/${photo}@2x.png")
+                //Log.d("deneme1", response.body().toString())
+                //Log.d("deneme1", response.body()?.current?.weather?.get(0)?.icon.toString())
 
 
                 if (response.isSuccessful) {
-                    val everything = response.body()
-                    everything?.let {
-                        Log.d("deneme1", it.daily?.size.toString())
+                    val myBody = response.body()
+                    myBody?.let {
+
+                        val photo = response.body()?.current?.weather?.get(0)?.icon.toString()
+                        binding.specialImage.load("https://openweathermap.org/img/wn/${photo}@2x.png")
 
                         binding.textView2.text = response.body()?.timezone
                         binding.textView3.text = response.body()?.current?.weather?.get(0)?.description
                         binding.textView4.text = response.body()?.current?.feelsLike.toString()
                         binding.textView5.text = response.body()?.current?.pressure.toString()
                         binding.textView6.text = response.body()?.current?.humidity.toString()
+                        binding.windSpeed.text =response.body()?.current?.windSpeed.toString()
+                        binding.windDeg.text =response.body()?.current?.windDeg.toString()
+                        binding.uvi.text =response.body()?.current?.uvi.toString()
+                        binding.dewpoint.text =response.body()?.current?.dewPoint.toString()
                     }
                 }
 
@@ -95,7 +98,7 @@ class HomeFragment : Fragment(){  //ana fragment. Veriler ilk burada ekrana bast
 
             override fun onFailure(call: Call<MainWeather>, t: Throwable) {
                 Log.d("deneme1", t.toString())
-
+                Toast.makeText(context,"Connection error!",Toast.LENGTH_SHORT).show()
             }
         })
 

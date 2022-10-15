@@ -16,6 +16,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Şehir Lokasyonunu girin"
+        android:fontFamily="@font/aclonica"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="19dp"
@@ -35,7 +37,7 @@
             android:layout_height="60dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Latitude"
+            android:hint="Enlem"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -47,7 +49,7 @@
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
             android:ems="10"
-            android:hint="Longitude"
+            android:hint="Boylam"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteY="88dp" />
@@ -60,7 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="Gir"
+        android:text="         Lokasyon Gir         "
+        android:background="@drawable/button_design"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />

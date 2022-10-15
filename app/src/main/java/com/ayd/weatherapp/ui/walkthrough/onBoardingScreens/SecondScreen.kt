@@ -23,7 +23,7 @@ class SecondScreen : Fragment() {     //2. onboard ekran
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)  //view pager'a ulaşmak için findViewByid kullandım.
 
-        binding.next2Text.setOnClickListener{
+        binding.next2Button.setOnClickListener{
             viewPager?.currentItem = 2
         }
 
