@@ -77,13 +77,13 @@ class HomeFragment : Fragment(){  //ana fragment. Veriler ilk burada ekrana bast
 
                         binding.textView2.text = response.body()?.timezone
                         binding.textView3.text = response.body()?.current?.weather?.get(0)?.description
-                        binding.textView4.text = response.body()?.current?.feelsLike.toString()
-                        binding.textView5.text = response.body()?.current?.pressure.toString()
-                        binding.textView6.text = response.body()?.current?.humidity.toString()
-                        binding.windSpeed.text =response.body()?.current?.windSpeed.toString()
-                        binding.windDeg.text =response.body()?.current?.windDeg.toString()
-                        binding.uvi.text =response.body()?.current?.uvi.toString()
-                        binding.dewpoint.text =response.body()?.current?.dewPoint.toString()
+                        binding.textView4.text = response.body()?.current?.feelsLike?.minus(273.15).toString().take(5)+ " C°"
+                        binding.textView5.text = response.body()?.current?.pressure.toString() + " p"
+                        binding.textView6.text = response.body()?.current?.humidity.toString() + " g/m3"
+                        binding.windSpeed.text =response.body()?.current?.windSpeed.toString() + " m/s"
+                        binding.windDeg.text =response.body()?.current?.windDeg.toString() + "°"
+                        binding.uvi.text =response.body()?.current?.uvi.toString() + " UV"
+                        binding.dewpoint.text =response.body()?.current?.dewPoint?.minus(273.15).toString().take(5) + " C°"
                     }
                 }
 

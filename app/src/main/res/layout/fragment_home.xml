@@ -130,6 +130,7 @@
                         android:layout_marginStart="36dp"
                         android:layout_marginTop="40dp"
                         android:text="pressure"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -140,6 +141,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="dew point"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="@+id/textView5"
                         app:layout_constraintTop_toBottomOf="@+id/uvi" />
@@ -150,6 +152,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="uvi"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="@+id/textView5"
                         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -209,6 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="wind speed"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="@+id/textView6"
                         app:layout_constraintTop_toBottomOf="@+id/windDeg" />
@@ -220,6 +224,7 @@
                         android:layout_marginStart="28dp"
                         android:layout_marginTop="40dp"
                         android:text="humidity"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -230,6 +235,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:text="wind degree"
+                        android:fontFamily="@font/aclonica"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="@+id/textView6"
                         app:layout_constraintTop_toBottomOf="@+id/textView6" />
