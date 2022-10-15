@@ -30,7 +30,8 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", "\"https://api.openweathermap.org/\""
-            buildConfigField "String", "API_KEY", "\"8ddadecc7ae4f56fee73b2b405a63659\""
+            buildConfigField "String", "API_KEY", "\"9d78545332f781de8a2b1a3bd1c9feeb\""
+
         }
 
     }

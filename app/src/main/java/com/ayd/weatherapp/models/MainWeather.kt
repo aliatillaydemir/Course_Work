@@ -12,7 +12,7 @@ data class MainWeather(
     val current: @RawValue Current?,   //bu classları da parcelize yap.
     @SerializedName("daily")
     val daily: @RawValue List<Daily>?,
-    //@SerializedName("hourly")   //bu hourly'de hata veriyor, neden anlamadım ama bulacağım. aynı şekilde kullandığım liste dönen değişkenler var, gson hatası verme sebebi bulunmalı.
+    //@SerializedName("hourly")
     //val hourly: List<Hourly>?,
     @SerializedName("lat")
     val lat: Double?,

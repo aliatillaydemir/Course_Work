@@ -33,7 +33,7 @@ class SplashFragment : Fragment(), CoroutineScope {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         launch {
-            delay(1250)                      //1.25 saniye splash screen ekranda duracak.
+            delay(2000)                      //2 saniye splash screen ekranda duracak.
             withContext(Dispatchers.Main){
                 if(onBoardingFinished()){             //eğer onbard ekranlarını bitirdiysek burası çalışır ve bir daha gözükmezler.
                     findNavController().navigate(R.id.action_splashFragment_to_firstFragment)
